@@ -10,6 +10,11 @@ export interface Props {
   color?: string;
   placeholder?: string;
   style?: React.CSSProperties;
+  leftIcon?: React.ReactNode | React.Component;
+}
+
+export interface ILabel {
+  leftIcon?: React.ReactNode | React.Component;
 }
 
 export const Input: React.FC<Props> = ({
@@ -19,11 +24,12 @@ export const Input: React.FC<Props> = ({
   value,
   setValue,
   placeholder,
+  leftIcon,
   style,
   ...props
 }) => {
   return (
-    <Label htmlFor={name} color={color}>
+    <Label htmlFor={name} color={color} leftIcon={leftIcon}>
       <input
         style={style}
         name={name}
@@ -34,6 +40,7 @@ export const Input: React.FC<Props> = ({
         onChange={(e) => setValue(e.target.value)}
         {...props}
       />
+      {leftIcon && leftIcon}
     </Label>
   );
 };
