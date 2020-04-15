@@ -8,6 +8,7 @@ export interface Props {
   onClick?: () => void;
   disabled?: boolean;
   style?: React.CSSProperties;
+  icon?: React.ReactNode | React.Component;
 }
 
 export const Button: React.FC<Props> = ({
@@ -16,6 +17,7 @@ export const Button: React.FC<Props> = ({
   color = "#ffffff",
   outlined = false,
   style,
+  icon,
   ...props
 }) => {
   return (
@@ -26,6 +28,7 @@ export const Button: React.FC<Props> = ({
       style={style}
       {...props}
     >
+      {icon && icon}
       {children}
     </Container>
   );
