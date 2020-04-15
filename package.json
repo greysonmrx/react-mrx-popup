@@ -1,0 +1,10 @@
+{
+  "name": "react-mrx-ui",
+  "version": "1.0.0",
+  "description": "Beautiful react components for web development",
+  "main": "dist/index.js",
+  "repository": "https://github.com/greysonmrx/react-mrx-ui.git",
+  "author": "Greyson Mascarenhas",
+  "license": "MIT",
+  "private": false
+}
