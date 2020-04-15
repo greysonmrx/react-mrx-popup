@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import { MdSearch } from "react-icons/md";
+
+import {
+  MdSearch,
+  MdVpnKey,
+  MdVisibility,
+  MdVisibilityOff,
+} from "react-icons/md";
 
 import { Input } from "../src";
 
@@ -17,7 +23,7 @@ storiesOf("Input", module)
       />
     );
   })
-  .add("With left icon", () => {
+  .add("With Left Icon", () => {
     const [inputValue, setInputValue] = useState("");
 
     return (
@@ -27,6 +33,28 @@ storiesOf("Input", module)
         placeholder="Search..."
         value={inputValue}
         setValue={setInputValue}
+      />
+    );
+  })
+  .add("With Right Icon", () => {
+    const [inputValue, setInputValue] = useState("");
+    const [visibility, setVisibility] = useState(false);
+
+    return (
+      <Input
+        name="password"
+        leftIcon={<MdVpnKey />}
+        type={visibility ? "text" : "password"}
+        placeholder="Password"
+        value={inputValue}
+        setValue={setInputValue}
+        rightIcon={
+          visibility ? (
+            <MdVisibilityOff onClick={() => setVisibility(false)} />
+          ) : (
+            <MdVisibility onClick={() => setVisibility(true)} />
+          )
+        }
       />
     );
   });
