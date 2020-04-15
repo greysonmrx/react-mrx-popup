@@ -7,7 +7,13 @@
   "author": "Greyson Mascarenhas",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "storybook": "start-storybook -p 8080"
+  },
   "devDependencies": {
+    "@storybook/addon-centered": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "react": "^16.13.1",
     "typescript": "^3.8.3"
   }
