@@ -6,5 +6,8 @@
   "repository": "https://github.com/greysonmrx/react-mrx-ui.git",
   "author": "Greyson Mascarenhas",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "react": "^16.13.1"
+  }
 }
