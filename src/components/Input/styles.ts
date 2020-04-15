@@ -13,10 +13,14 @@ export const Label = styled.label<ILabel>`
     border-radius: 4px;
     padding: 16px;
     padding-left: ${(props) => (props.leftIcon ? "50px" : "20px")};
-    padding-right: 20px;
-    color: #ffffff;
+    padding-right: ${(props) => (props.rightIcon ? "50px" : "20px")};
+    color: #fff;
     font-size: 16px;
     transition: 180ms ease-in-out;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
 
     & + svg {
       fill: rgba(255, 255, 255, 0.2);
@@ -28,8 +32,15 @@ export const Label = styled.label<ILabel>`
       transition: 180ms ease-in-out;
     }
 
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.2);
+    & + svg + svg {
+      fill: rgba(255, 255, 255, 0.2);
+      position: absolute;
+      right: 15px;
+      top: 16px;
+      width: 22px;
+      height: 22px;
+      transition: 180ms ease-in-out;
+      cursor: pointer;
     }
 
     &:focus {

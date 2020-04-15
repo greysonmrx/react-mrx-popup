@@ -11,10 +11,12 @@ export interface Props {
   placeholder?: string;
   style?: React.CSSProperties;
   leftIcon?: React.ReactNode | React.Component;
+  rightIcon?: React.ReactNode | React.Component;
 }
 
 export interface ILabel {
   leftIcon?: React.ReactNode | React.Component;
+  rightIcon?: React.ReactNode | React.Component;
 }
 
 export const Input: React.FC<Props> = ({
@@ -24,12 +26,18 @@ export const Input: React.FC<Props> = ({
   value,
   setValue,
   placeholder,
-  leftIcon,
   style,
+  leftIcon,
+  rightIcon,
   ...props
 }) => {
   return (
-    <Label htmlFor={name} color={color} leftIcon={leftIcon}>
+    <Label
+      htmlFor={name}
+      color={color}
+      leftIcon={leftIcon}
+      rightIcon={rightIcon}
+    >
       <input
         style={style}
         name={name}
@@ -41,6 +49,7 @@ export const Input: React.FC<Props> = ({
         {...props}
       />
       {leftIcon && leftIcon}
+      {rightIcon && rightIcon}
     </Label>
   );
 };
