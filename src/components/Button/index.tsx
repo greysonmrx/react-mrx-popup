@@ -6,6 +6,7 @@ export interface Props {
   color?: string;
   outlined?: boolean;
   onClick?: () => void;
+  disabled?: boolean;
   style?: React.CSSProperties;
 }
 

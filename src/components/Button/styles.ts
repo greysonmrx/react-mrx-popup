@@ -19,7 +19,12 @@ export const Container = styled.button<Props>`
   cursor: pointer;
   transition: 100ms linear;
 
-  &:hover {
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
     border-color: transparent;
     background-color: ${(props) =>
@@ -28,7 +33,7 @@ export const Container = styled.button<Props>`
         : lighten(0.03, props.backgroundColor as string)};
   }
 
-  :active {
+  :active:not(:disabled) {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
     background-color: ${(props) =>
       darken(0.03, props.backgroundColor as string)};
